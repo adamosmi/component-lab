@@ -1,0 +1,32 @@
+{
+  "name": "component-lab",
+  "version": "1.0.0",
+  "description": "Component Lab",
+  "keywords": [
+    "component"
+  ],
+  "homepage": "https://github.com/adamosmi/component-lab#readme",
+  "bugs": {
+    "url": "https://github.com/adamosmi/component-lab/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamosmi/component-lab.git"
+  },
+  "license": "ISC",
+  "author": "Andrew Damon-Smith",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i src/input.css -o dist/style.css",
+    "build:js": "npx esbuild src/main.ts --bundle --minify --outfile=dist/main.js --format=esm",
+    "build": "tsc && npm run build:css && npm run build:js"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "esbuild": "^0.27.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
+}
