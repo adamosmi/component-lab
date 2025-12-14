@@ -9,8 +9,14 @@ templates = Jinja2Templates('templates')
 app.mount('/dist', StaticFiles(directory='dist'), 'dist')
 
 @app.get('/')
-async def get_root(request: Request):
+def get_root(request: Request):
     context = {
             'request': request
         }
     return templates.TemplateResponse('base.html', context)
+
+@app.post('/api/multiselect-submit')
+async def post_multiselect_submit(request: Request):
+    print(await request.json())
+    return {'sucess': True}
+

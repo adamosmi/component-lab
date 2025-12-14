@@ -20,7 +20,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "npx tailwindcss -i src/input.css -o dist/style.css",
-    "build:js": "npx esbuild src/main.ts --bundle --minify --outfile=dist/main.js --format=esm",
+    "build:js": "npx esbuild src/main.ts --bundle --outfile=dist/main.js --format=esm",
     "build": "tsc && npm run build:css && npm run build:js"
   },
   "devDependencies": {
